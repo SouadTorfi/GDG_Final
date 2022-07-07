@@ -1,16 +1,18 @@
 import React from "react";
 import "./Cards.css";
 import { Link } from "react-router-dom";
+import DollById from "../pages/DollById";
+
 export default function Cards(props) {
-  const { name, price, image } = props.doll;
+  const { name, price, image, _id } = props.doll;
   // props.DeleteCategories(props.data.id)
   return (
     <div className="cards">
       <img src={image[0]} alt="" loading="lazy" />
       <div className="AddToCart">
         <div className="opacity">
-          <Link to="/Pagination">
-            <button>Add to cart</button>
+          <Link to={`/product/${_id}`}>
+            <button>View more</button>
           </Link>
         </div>
       </div>

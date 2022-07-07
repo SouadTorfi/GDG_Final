@@ -13,13 +13,21 @@ export default function Header() {
     <div>
       <div className="top-header">
         <div className="start-p">
-          <WhatsAppIcon /> +961 71 949 589
+          <WhatsAppIcon />
+          <a
+            className="whatsapp-header-link"
+            href="https://wa.me/96170297540"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +961 71 949 589
+          </a>
         </div>
         <div className="end-p">
-          <div className="search">
+          {/* <div className="search">
             <SearchIcon />
             Search
-          </div>
+          </div> */}
           <div className="account">
             <PersonIcon />
           </div>

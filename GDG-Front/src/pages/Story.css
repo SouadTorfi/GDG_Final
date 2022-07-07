@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 20px;
 }
 /* .parag-content h3::after{
     content: "";
@@ -41,13 +42,15 @@
     padding-bottom: 10px;
 }
 .parag-data{
-
     width: 100%;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     line-height: 2rem;
     text-align: justify;
+}
+.parag-data p{
+    margin-bottom: 15px;
 }
 .img-content{
     display: flex;
@@ -84,5 +87,8 @@
 @media screen and (max-width: 768px) {
 .about-section{
     margin-top:0px;
+}
+.parag-content{
+    width: 100%
 }
 }

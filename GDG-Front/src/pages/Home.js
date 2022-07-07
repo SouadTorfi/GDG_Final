@@ -10,9 +10,40 @@ import Facts from "../images/Facts.png";
 import Cover from "../images/CoverPhoto.jpg";
 import "../pages/Home.css";
 import Header from "../components/Header";
-import WhatsApp from "@mui/icons-material/WhatsApp";
+import WhatsApp from "../components/Whatsapp";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { useState } from "react";
 
 function Home() {
+  const newsletter = document.getElementById("newsletter_subscription");
+  toast.configure();
+  const [subscribe, setSubscribers] = useState({
+    email: "",
+  });
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setSubscribers({ ...subscribe, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subscribersData = {
+      email: subscribe.email,
+    };
+    axios
+      .post(`http://localhost:2000/api/emails`, subscribersData)
+      .then((res) => {
+        if (res.status === 200) {
+          newsletter.reset();
+        }
+        toast.success("Thanks for your Subscription");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Error While Subscribing");
+      });
+  };
   return (
     <div>
       <Header />
@@ -21,7 +52,9 @@ function Home() {
         <div className="image__content">
           <h3 className="main__title">Ready to fill the doll with</h3>
           <h2 className="sub__title">cotton and love?</h2>
+          <Link to="/dolls">
           <button className="main__btn">Shop now</button>
+          </Link>
         </div>
       </div>
       {/** Handmade Section */}
@@ -87,7 +120,12 @@ function Home() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer
+        handlesChange={handleChange}
+        handlesSubmit={handleSubmit}
+        state={subscribe}
+      />
+      <WhatsApp />
     </div>
   );
 }

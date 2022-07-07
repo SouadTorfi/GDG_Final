@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 .dolls {
   display: flex;
   padding: 10px 30px;
@@ -30,9 +30,10 @@
   border: 1px solid #ebeaea;
   float: left;
   background: #ffffff;
-  width: 103px;
+  width: 160px;
   padding-right: 59px;
   padding-top: 5px;
+  margin-top: 15px;
 }
 
 .AllCategories h1 {
@@ -43,6 +44,7 @@
 }
 .AllCategories h2 {
   color: #716761;
+  margin-top: 10px;
 }
 
 .collection {
@@ -169,12 +171,13 @@
     height: 139px;
   }
   .AllCategories input[type="text"] {
-    width: 131px;
+    width: 180px;
     padding-right: 100px;
     padding-top: 8px;
+    margin-bottom: 10px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 690px) {
   .dolls {
     align-items: initial;
   }
@@ -187,4 +190,8 @@
     .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
     padding-right: 74px;
   }
-} */
+  .AllCategories input[type="text"] {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+}

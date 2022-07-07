@@ -14,7 +14,10 @@ import axios from "axios";
 import UserLogin from "./pages/UserLogin";
 import NotFound from "./pages/NotFound";
 import Story from "./pages/Story";
-import OneDoll from "./pages/OneDoll";
+import "./App.css";
+import { Pagination } from "@mui/material";
+import DollById from "./pages/DollById";
+// import OneDoll from "./pages/OneDoll";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -41,7 +44,7 @@ function App() {
         ) : (
           <Route path="*" element={<NotFound />} />
         )}
-        <Route path="*" element={<NotFound />} />
+        =
         <Route path="/adminlogin" element={<Login />} />
         <Route path="/login" element={<UserLogin />} />
         <Route path="/loading" element={<Loader />} />
@@ -49,7 +52,8 @@ function App() {
         <Route path="/facts/:name" element={<PsychologicalFacts />} />
         <Route path="/filldoll/:name" element={<FillDolls />} />
         <Route path="/dollhouse/:name" element={<DollsHouse />} />
-  
+        <Route path="/product/:id" element={<DollById />} />
+        <Route path="*" element={<NotFound />} />
         {categories.map((each) => {
           return each.name == "dolls" ? (
             <Route

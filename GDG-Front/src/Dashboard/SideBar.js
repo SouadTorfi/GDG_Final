@@ -8,7 +8,10 @@ import Logo from "../images/DollsLogo.png";
 
 export default function Sidebar() {
   const [showNav, setShowNav] = useState(false);
-
+  const logout = () =>{
+    localStorage.removeItem("token");
+    window.location.href("/");
+  }
   return (
     <div className="dashboard_sidebar">
       <div className="dashboard_navbar">
@@ -98,8 +101,17 @@ export default function Sidebar() {
               </Link>
             </li>
             <li>
+              <Link
+                className="sidebar_links"
+                to="/dashboard/emails"
+                onClick={() => setShowNav(false)}
+              >
+                Emails
+              </Link>
+            </li>
+            <li>
               <Link to="/login" className="sidebar_links"
-              onClick={() => localStorage.removeItem("token")}
+              onClick={() => logout()}
               >
                 <AiOutlinePoweroff /> Logout
               </Link>

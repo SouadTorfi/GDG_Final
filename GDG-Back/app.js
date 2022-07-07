@@ -16,6 +16,7 @@ var orderStatusRouter = require("./routes/orderStatus");
 var productRouter = require("./routes/product");
 var videoRouter = require("./routes/video");
 var aboutRouter = require("./routes/about");
+var emailRouter = require("./routes/email")
 
 const { default: mongoose } = require("mongoose");
 
@@ -53,5 +54,6 @@ app.use("/api/orders", orderRouter);
 app.use("/api/orderStatuses", orderStatusRouter);
 app.use("/api/products", productRouter);
 app.use("/api/video", videoRouter);
+app.use("/api/emails",emailRouter);
 
 module.exports = app;

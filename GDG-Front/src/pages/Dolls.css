@@ -171,14 +171,13 @@
     height: 139px;
   }
   .AllCategories input[type="text"] {
-    width: 131px;
+    width: 180px;
     padding-right: 100px;
     padding-top: 8px;
     margin-bottom: 10px;
-    }
-
+  }
 }
-@media (max-width: 400px) {
+@media (max-width: 690px) {
   .dolls {
     align-items: initial;
   }

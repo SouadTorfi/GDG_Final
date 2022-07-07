@@ -99,119 +99,123 @@ export default function Dolls(props) {
       setIsChecked(new_Array);
     }
   };
-  if (loading) {
-    return <Loading />;
-  }
+
   return (
     <div>
       <Header />
-      <div className="dolls">
-        <div className="categories">
-          <form className="AllCategories">
-            <h1>Hoops</h1>
-            <h2>All_Categories</h2>
-            <div>
-              <input
-                type="text"
-                placeholder="Search Categories.."
-                name="search"
-                onChange={(e) => setSearchValue(e.target.value)}
-              />
-            </div>
-          </form>
-          <form className="Collection_form">
-            <div className="collection">
-              {collection
-                .filter((val) => {
-                  if (searchValue === "") {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchValue.toLowerCase())
-                  )
-                    return val;
-                })
-                .map((e, index) => {
-                  return (
-                    <div className="collection-form" key={index}>
-                      <input
-                        type="checkbox"
-                        id={`collection ${index}`}
-                        onChange={(event) => handleOnChange(event, e.name)}
-                        name={"collection"}
-                        value={e._id}
-
-                        // onClick={() => filterResult("collection 1")}
-                      />
-
-                      <label htmlFor={`collection ${index}`}>{e.name}</label>
-                    </div>
-                  );
-                })}
-            </div>
-          </form>
+      {loading ? (
+        <div className="loading_div">
+          <Loading />
         </div>
+      ) : (
+        <div className="dolls">
+          <div className="categories">
+            <form className="AllCategories">
+              <h1>Hoops</h1>
+              <h2>All_Categories</h2>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Search Categories.."
+                  name="search"
+                  onChange={(e) => setSearchValue(e.target.value)}
+                />
+              </div>
+            </form>
+            <form className="Collection_form">
+              <div className="collection">
+                {collection
+                  .filter((val) => {
+                    if (searchValue === "") {
+                      return val;
+                    } else if (
+                      val.name.toLowerCase().includes(searchValue.toLowerCase())
+                    )
+                      return val;
+                  })
+                  .map((e, index) => {
+                    return (
+                      <div className="collection-form" key={index}>
+                        <input
+                          type="checkbox"
+                          id={`collection ${index}`}
+                          onChange={(event) => handleOnChange(event, e.name)}
+                          name={"collection"}
+                          value={e._id}
 
-        <div className="dools-items">
-          <div className="filter">
-            <div>
-              <p>Sort By:</p>
+                          // onClick={() => filterResult("collection 1")}
+                        />
 
-              <div className="filter_By">
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                  <Select
-                    onChange={(e) => {
-                      const selected = e.target.value;
-                      setSortProducts(selected);
-                    }}
-                    value={10}
-                    // onChange={}
-                    displayEmpty
-                    inputProps={{ "aria-label": "Without label" }}
-                  >
-                    <MenuItem value="10">
-                      <em>Best Seller</em>
-                    </MenuItem>
-                    {/* <MenuItem value={10}>Best Seller</MenuItem> */}
-                    <MenuItem value="2">highest</MenuItem>
-                    <MenuItem value="1">lowest </MenuItem>
-                  </Select>
-                </FormControl>
+                        <label htmlFor={`collection ${index}`}>{e.name}</label>
+                      </div>
+                    );
+                  })}
+              </div>
+            </form>
+          </div>
+
+          <div className="dools-items">
+            <div className="filter">
+              <div>
+                <p>Sort By:</p>
+
+                <div className="filter_By">
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <Select
+                      onChange={(e) => {
+                        const selected = e.target.value;
+                        setSortProducts(selected);
+                      }}
+                      value={10}
+                      // onChange={}
+                      displayEmpty
+                      inputProps={{ "aria-label": "Without label" }}
+                    >
+                      <MenuItem value="10">
+                        <em>Best Seller</em>
+                      </MenuItem>
+                      {/* <MenuItem value={10}>Best Seller</MenuItem> */}
+                      <MenuItem value="2">highest</MenuItem>
+                      <MenuItem value="1">lowest </MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="items">
-            {product &&
-              product
-                .sort((a, b) => {
-                  if (sortProduct === "1") {
-                    return a.price - b.price;
-                  }
-                  if (sortProduct === "2") {
-                    return b.price - a.price;
-                  } else {
-                    return product;
-                  }
-                })
-                .map((doll, index) => {
-                  return (
-                    <div key={index}>
-                      <Cards doll={doll} />
-                    </div>
-                  );
-                })}
-          </div>
+            <div className="items">
+              {product &&
+                product
+                  .sort((a, b) => {
+                    if (sortProduct === "1") {
+                      return a.price - b.price;
+                    }
+                    if (sortProduct === "2") {
+                      return b.price - a.price;
+                    } else {
+                      return product;
+                    }
+                  })
+                  .map((doll, index) => {
+                    return (
+                      <div key={index}>
+                        <Cards doll={doll} />
+                      </div>
+                    );
+                  })}
+            </div>
 
-          <div>
-            <Pagination
-              count={totalPages}
-              getproductsByPagination={getproductsByPagination}
-            />
-            {/* )} */}
+            <div>
+              <Pagination
+                count={totalPages}
+                getproductsByPagination={getproductsByPagination}
+              />
+              {/* )} */}
+            </div>
           </div>
+          <Whatsapp />
         </div>
-        <Whatsapp />
-      </div>
+      )}
       <Footer />
     </div>
   );

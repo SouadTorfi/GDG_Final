@@ -1,6 +1,10 @@
 ul {
     list-style: none;
   }
+  .whatsapp-header-link{
+    text-decoration: none;
+    color: #fff;
+  }
   .links {
     text-decoration: none;
     color: black;

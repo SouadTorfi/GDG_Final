@@ -4,6 +4,7 @@ import axios from "axios";
 import Loading from "../components/Loader";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import WhatsApp from "../components/Whatsapp";
 
 export default function Story() {
   const [about, setAbout] = useState([]);
@@ -22,15 +23,21 @@ export default function Story() {
       });
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
   return (
     <>
       <Header />
+
+      {loading ? (
+          <div className="loading_div">
+            <Loading />
+          </div>
+        ) : (
+          <>
+
       {about &&
         about.map((item, index) => {
           return (
+            
             <div key={index} className="about-section">
               <div className="about-content">
                 <div className="parag-content">
@@ -40,10 +47,11 @@ export default function Story() {
                       <h3>مرحباً، انا هدى متلج</h3>
                     </div>
                   </div>
-                  <div className="parag-data">
-                    <p id="Arabic-text">{item.arabic_paragraph}</p>
-                    <p>{item.english_paragraph}</p>
-                  </div>
+                    <div className="parag-data">
+                      <p id="Arabic-text">{item.arabic_paragraph}</p>
+                      <p>{item.english_paragraph}</p>
+                    </div>
+            
                 </div>
                 <div className="img-content">
                   {item.image.map((images) => {
@@ -54,8 +62,11 @@ export default function Story() {
             </div>
           );
         })}
-          <Footer/>
+        </>
+        )}
+        
+      <WhatsApp />
+      <Footer />
     </>
-
   );
 }

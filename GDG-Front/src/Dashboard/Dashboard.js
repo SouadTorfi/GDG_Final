@@ -23,6 +23,7 @@ import EditVideo from "./Video/EditVideo";
 import EditProduct from "./Products/EditProduct";
 import ProductHoops from "./Products//ProductsHoops";
 import axios from "axios";
+import Emails from "./Emails/Email";
 function Dashboard() {
   const [categories, setCategories] = useState([]);
 
@@ -59,6 +60,7 @@ function Dashboard() {
 
         <Route path="/editproduct/:id" element={<EditProduct />} />
         <Route path="/videos" element={<Video />} />
+        <Route path="/emails" element={<Emails />} />
         <Route path="/addvideo" element={<AddVideo />} />
         <Route path="/editvideo/:id" element={<EditVideo />} />
         <Route path="/addproduct" element={<AddProduct />} />

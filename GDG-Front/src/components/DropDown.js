@@ -7,8 +7,6 @@ function DropDown() {
   // const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  
-  
   return (
     <>
       <div className="dropdown">
@@ -24,7 +22,7 @@ function DropDown() {
             {/* <div className="dropdown-image">
           <img src={logo} alt="hopes"></img>
         </div> */}
-            <Link className="links" to="/home">
+            <Link className="links" to="/">
               Home
             </Link>
             <Link className="links" to="/story">
@@ -36,7 +34,7 @@ function DropDown() {
             <Link className="links" to="/hoops">
               Hoops
             </Link>
-            <Link className="links" to="/psychological-facts">
+            <Link className="links" to="/facts/PsychologicalFacts">
               Psychological Facts
             </Link>
           </div>

@@ -39,40 +39,25 @@ export default function PsychologicalFacts() {
       console.log(err);
     }
   };
-  if (loading) {
-    return <Loading />;
-  }
+
   return (
     <>
       <div>
         <Header />
-        <div className="psychological_Facts">
-          <h1>Psychological Facts</h1>{" "}
-          <div className="psycholodical_first">
-            {lastvideo.map((e, index) => {
-              return (
-                <div key={index}>
-                  <iframe
-                    width="860"
-                    height="415"
-                    src={e.path}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              );
-            })}
+        {loading ? (
+          <div className="loading_div">
+            <Loading />
           </div>
-          <div className="psycholodical_whole">
-            <div className="psycholodical_all">
-              {video.map((e, index) => {
+        ) : (
+          <div className="psychological_Facts">
+            <h1>Psychological Facts</h1>{" "}
+            <div className="psycholodical_first">
+              {lastvideo.map((e, index) => {
                 return (
                   <div key={index}>
                     <iframe
-                      width="430"
-                      height="207"
+                      width="860"
+                      height="415"
                       src={e.path}
                       title="YouTube video player"
                       frameBorder="0"
@@ -83,12 +68,31 @@ export default function PsychologicalFacts() {
                 );
               })}
             </div>
+            <div className="psycholodical_whole">
+              <div className="psycholodical_all">
+                {video.map((e, index) => {
+                  return (
+                    <div key={index}>
+                      <iframe
+                        width="430"
+                        height="207"
+                        src={e.path}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="psycholodical_pagination">
+              <Pagination />
+            </div>
+            <Whatsapp />
           </div>
-          <div className="psycholodical_pagination">
-            <Pagination />
-          </div>
-          <Whatsapp />
-        </div>
+        )}
         <Footer />
       </div>
     </>

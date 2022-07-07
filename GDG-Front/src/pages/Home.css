@@ -49,6 +49,7 @@
     background-color: #FBB040;
     color: #fff;
     font-weight: 900;
+    cursor: pointer;
   }
   @media (max-width: 767px) {
     .image__container .image__content .main__title {

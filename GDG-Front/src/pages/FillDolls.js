@@ -5,6 +5,8 @@ import Whatsapp from "../components/Whatsapp";
 import Loading from "../components/Loader";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function FillDolls() {
   const [video, setVideo] = useState([]);
@@ -39,8 +41,11 @@ export default function FillDolls() {
   };
   return (
     <>
-      {loading ? (
-        <Loading />
+    <Header/>
+    {loading ? (
+        <div className="loading_div">
+          <Loading />
+        </div>
       ) : (
         <div className="Fill_Dolls">
           <h1>How to fill the Doll</h1>
@@ -88,6 +93,7 @@ export default function FillDolls() {
           <Whatsapp />
         </div>
       )}
+      <Footer/>
     </>
   );
 }
