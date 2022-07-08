@@ -56,9 +56,12 @@ export default function Products(props) {
     }
   }
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="loading_div">
+        <Loading />
+      </div>
+    );
   }
-
   return (
     <>
       <div className="dashboardProducts">

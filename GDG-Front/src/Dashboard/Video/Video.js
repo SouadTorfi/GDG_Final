@@ -39,7 +39,11 @@ function Video() {
     }
   };
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="loading_div">
+        <Loading />
+      </div>
+    );
   }
   return (
     <>

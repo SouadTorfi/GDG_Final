@@ -48,6 +48,7 @@ sign_in_btn.addEventListener("click", () => {
         });
         toast.success("Logged In Successfully")
         localStorage.setItem("token",res.data.token)
+        localStorage.setItem("id",res.data.admin.id)
         navigate('/dashboard/admins')
         window.location.reload("");
       }

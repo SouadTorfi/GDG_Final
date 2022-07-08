@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import "./Email.css";
+import Loading from '../../components/Loader';
+
 
 function Emails() {
   const [email,setEmails] = useState([]);
+  const [loading, setLoading] = useState(true);
   
   useEffect(()=>{
     getEmails();
@@ -12,12 +15,19 @@ function Emails() {
     await axios.get(`http://localhost:2000/api/emails`)
     .then(res =>{
       setEmails(res.data);
+      setLoading(false);
     })
     .catch((err)=>{
       console.log(err);
     })
   }
-
+  if (loading) {
+    return (
+      <div className="loading_div">
+        <Loading />
+      </div>
+    );
+  }
   return (
       <>
      <div className='email_table'>

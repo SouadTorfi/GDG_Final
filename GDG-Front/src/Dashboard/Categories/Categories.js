@@ -36,8 +36,12 @@ function Categories() {
       })
     }
   }
-  if(loading){
-    return <Loading/>
+  if (loading) {
+    return (
+      <div className="loading_div">
+        <Loading />
+      </div>
+    );
   }
   return (
       <>

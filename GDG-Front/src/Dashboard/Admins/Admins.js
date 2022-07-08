@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../components/Loader";
+import { color } from "@mui/system";
 
 function Admins() {
   toast.configure();
@@ -39,8 +40,13 @@ function Admins() {
     }
   };
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="loading_div">
+        <Loading />
+      </div>
+    );
   }
+
   return (
     <>
       <div className="admin_table">
@@ -71,12 +77,19 @@ function Admins() {
                       >
                         <button className="btn-edit">Edit</button>
                       </Link>
-                      <button
-                        className="btn-delete"
-                        onClick={() => onDeleteAdmin(item._id)}
-                      >
-                        Delete
-                      </button>
+                      {localStorage.getItem("id") === item._id ? (
+                        <button className="btn-delete" disabled>
+                          Delete
+                        </button>
+                      ) : (
+                        <button
+                          className="btn-delete"
+                          onClick={() => onDeleteAdmin(item._id)}
+                        >
+                          {" "}
+                          Delete{" "}
+                        </button>
+                      )}
                     </td>
                   </tr>
                 );
