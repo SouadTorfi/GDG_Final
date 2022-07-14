@@ -357,7 +357,7 @@ class Controller {
     // });
 
     Product.findById(id)
-      // .populate("category")
+      .populate("category")
       .exec(function (error, response) {
         if (error) return next(error);
         res.send(response);

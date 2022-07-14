@@ -33,7 +33,7 @@ function Orders() {
       axios.delete(`http://localhost:2000/api/orders/${id}`).then((res) => {
         console.log(res);
         toast.success("Order Deleted Successfully");
-        getOrders();
+        getOrders();  
       });
     }
   };

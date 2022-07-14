@@ -1,0 +1,309 @@
+.container-show-doll {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding-bottom: 200px;
+  width: 100%;
+  display: block;
+  justify-content: space-between;
+  background-color: #fef9f3;
+}
+.one-show-doll-first-step {
+  display: flex;
+  justify-content: space-between;
+}
+.one-show-doll-dolls-title {
+  margin-left: 100px;
+  position: relative;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.one-show-doll-dolls-title::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 4px;
+  left: 0;
+  top: 40px;
+  border-radius: 5px;
+  background-color: #e97436;
+}
+.one-show-doll-logo-imgs {
+  display: flex;
+}
+.one-show-doll-logo-imgs img {
+  width: 50%;
+  height: 50%;
+  margin-left: 50px;
+  align-items: center;
+  border-radius: 3%;
+}
+
+.one-show-doll-sorting {
+  margin-right: 100px;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  white-space: nowrap;
+}
+.one-show-doll-photo-detail {
+  margin-left: 50px;
+  width: 50%;
+}
+.one-show-doll-content {
+  display: block;
+}
+.one-show-doll-package,
+.one-show-doll-size,
+.one-show-doll-clothes {
+  margin: 20px 85px 0px 0px;
+}
+/* .size {
+    margin-right: 40px;
+  } */
+#one-show-doll-tot-price {
+  display: inline-block;
+  white-space: nowrap;
+  color: #e97436;
+  font-size: 25px;
+}
+.one-show-doll-photo-detail h1 {
+  display: inline-block;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+.one-show-doll-photo-detail p {
+  font-size: 50px;
+}
+.one-show-doll-pap {
+  display: flex;
+  white-space: nowrap;
+}
+#one-show-doll-dollar-num {
+  color: #e97436;
+  margin-left: 10px;
+}
+ul {
+  margin: 0;
+}
+ul.one-show-doll-dashed {
+  list-style-type: none;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+  font-weight: lighter;
+}
+ul.one-show-doll-dashed > li:before {
+  display: inline-block;
+  content: "-";
+  width: 1em;
+  margin-left: -1em;
+}
+ul.one-show-doll-dashed-clothes {
+  font-weight: lighter;
+}
+/* ul.one-show-doll-dashed-clothes > li::before {
+    display: inline-block;
+    content: "";
+    margin-left: -2.5em;
+    padding-left: -1em;
+  } */
+.one-show-doll-minus-button {
+  border: none;
+  height: 30px;
+  width: 40px;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  font-weight: lighter;
+  font-size: 20px;
+}
+.one-show-doll-count-quant {
+  display: flex;
+}
+.one-show-doll-numb {
+  display: flex;
+  background-color: #efefef;
+  align-items: center;
+  font-family: sans-serif;
+}
+.one-show-doll-plus-button {
+  border: none;
+  height: 30px;
+  width: 40px;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+  font-weight: lighter;
+  font-size: 20px;
+}
+.one-show-doll-pac-size-cloth {
+  display: flex;
+  margin-bottom: 20px;
+}
+.one-show-doll-qunt-price {
+  display: flex;
+}
+.one-show-doll-price-sec {
+  margin-left: 40px;
+}
+.one-show-doll-add-to-cart-btn {
+  background: #e97436;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.one-show-doll-buy-now-btn {
+  background: #ffffff;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #e97436;
+  border: 1px solid #e97436;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 1024px) {
+  .one-show-doll-logo-imgs img {
+    width: 30%;
+    height: 30%;
+    margin: 25px 0px 0px 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .one-show-doll-sorting {
+    margin-right: 10px;
+  }
+  .one-show-doll-logo-imgs {
+    display: flex;
+    /* margin-left: 100px; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    margin-top: 5%;
+  }
+  .one-show-doll-photo-detail {
+    margin-left: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .one-show-doll-logo-imgs {
+    display: flex;
+    margin-left: -70px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+  }
+  .container-show-doll {
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .one-show-doll-start-p {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px 30px;
+  }
+  .one-show-doll-dolls-title {
+    display: flex;
+    align-items: flex-start; /**/
+    padding: 0px;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+  .one-show-doll-first-step {
+    display: flex;
+    flex-direction: column;
+  }
+  .one-show-doll-photo-detail h1 {
+    display: flex;
+  }
+  .one-show-doll-photo-detail {
+    margin-left: 50px;
+  }
+  .one-show-doll-sorting {
+    margin-right: 0px;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .one-show-doll-logo-imgs img {
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 50px;
+    border-radius: 3%;
+  }
+  .one-show-doll-content {
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .one-show-doll-dolls-title::after {
+    width: 20%;
+  }
+
+  .one-show-doll-dashed-clothes {
+    margin-left: 26px;
+  }
+  .one-show-doll-sorting {
+    justify-content: flex-start;
+    margin-left: 100px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .one-container-show-doll {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .one-show-doll-res-content-under-img {
+    display: block;
+    justify-content: center;
+  }
+  .one-show-doll-pac-size-cloth {
+    display: block;
+  }
+  .one-show-doll-qunt-price {
+    display: block;
+  }
+  .one-show-doll-price-sec {
+    margin-left: 0px;
+  }
+  .one-show-doll-logo-imgs img {
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    border-radius: 3%;
+  }
+  .one-show-doll-dolls-title::after {
+    width: 30%;
+  }
+  .one-show-doll-sorting {
+    justify-content: flex-start;
+    font-size: 20px;
+    margin-left: 35px;
+  }
+  .one-show-doll-dolls-title {
+    margin-left: 35px;
+  }
+}

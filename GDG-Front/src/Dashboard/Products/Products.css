@@ -195,20 +195,20 @@ big {
   font-size: 80%;
 }
 
-@media screen and (min-width: 40em) {
-  .dashboardcards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  @media screen and (min-width: 40em) {
+    .dashboardcards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .dashboardcard {
+      flex: 0 1 calc(50% - 1em);
+    }
   }
 
-  .dashboardcard {
-    flex: 0 1 calc(50% - 1em);
+  @media screen and (min-width: 60em) {
+    .dashboardcard {
+      flex: 0 1 calc(25% - 1em);
+    }
   }
-}
-
-@media screen and (min-width: 60em) {
-  .dashboardcard {
-    flex: 0 1 calc(25% - 1em);
-  }
-}

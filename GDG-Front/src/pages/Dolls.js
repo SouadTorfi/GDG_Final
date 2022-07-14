@@ -68,7 +68,7 @@ export default function Dolls(props) {
       setLoading(false);
     } catch (err) {
       console.log("err ", err);
-    }
+    }   
   };
 
   const getCollectionsApi = async () => {
@@ -116,7 +116,7 @@ export default function Dolls(props) {
               <h2>All_Categories</h2>
 
               <div>
-                <input
+                <inputname
                   className="allcategories_inputField"
                   type="text"
                   placeholder="Search Categories.."
